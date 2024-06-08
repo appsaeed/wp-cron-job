@@ -1,12 +1,12 @@
 ## Advanced Cron Jobs - WP Plugin
 
-### Plugin Name:** Advanced Cron Jobs
+### Plugin Name: Advanced Cron Jobs
 
 ### Description
 
 Advanced Cron Jobs is a WordPress plugin that simplifies managing and scheduling cron jobs directly from your WordPress dashboard. It offers a user-friendly interface for viewing, editing, deleting, and creating cron events.
 
-### Features
+## Features
 
 * View all cron events with details like arguments, recurrence, callback functions, and next run time.
 * Edit, delete, pause, resume, and immediately run cron events.
@@ -17,14 +17,14 @@ Advanced Cron Jobs is a WordPress plugin that simplifies managing and scheduling
 * Identify and address potential cron system issues.
 * Supports timezones.
 
-### Benefits
+## Benefits
 
 * Gain control over your WordPress cron jobs.
 * Improve website performance by optimizing cron job schedules.
 * Easily troubleshoot cron-related issues.
 * Securely manage cron events with user access controls.
 
-### Installation
+## Installation
 There are two ways to install Advanced Cron Jobs:
 
 **Method 1: Manual Installation**
@@ -41,16 +41,16 @@ There are two ways to install Advanced Cron Jobs:
 4. Once installed, click "Activate" to start using the plugin.2. Install and activate the plugin.
 
 
-### Usage
+## Usage
 
 1. Navigate to **Tools > Cron Events** to manage existing cron events.
 2. Navigate to **Settings > Cron Schedules** to manage custom cron schedules.
 
-### Accessibility
+## Accessibility
 
 Advanced Cron Jobs is designed to be accessible and adhere to WCAG 2.0 guidelines. If you encounter any accessibility issues, please report them through the plugin's GitHub repository.
 
-### Frequently Asked Questions (FAQs)
+## Frequently Asked Questions (FAQs)
 
 **Does this plugin work with PHP 8 or above?**
 
@@ -97,7 +97,13 @@ Cron schedules define intervals for executing events. Plugins can add custom sch
 1. Use the plugin interface to add a new event with the desired hook name and schedule.
 2. In your theme's `functions.php` file, use `add_action` to define the function to be executed when the hook is triggered.
 
-### How to Contribute
+## Additional Notes
+
+* WP-CLI commands for cron management are now part of WP-CLI itself. Use `wp help cron` for more information.
+* Only users with the `manage_options` capability can manage cron events and schedules.
+* Only users with the `edit_files` capability can manage PHP cron events.
+
+## How to Contribute
 
 The plugin's code is available on GitHub. Here's how to contribute:
 
@@ -105,8 +111,4 @@ The plugin's code is available on GitHub. Here's how to contribute:
 2. Clone the forked repository to your local machine.
 3. Make your changes and commit them.
 4. Create a pull request on the original GitHub repository.
-### Additional Notes
 
-* WP-CLI commands for cron management are now part of WP-CLI itself. Use `wp help cron` for more information.
-* Only users with the `manage_options` capability can manage cron events and schedules.
-* Only users with the `edit_files` capability can manage PHP cron events.
