@@ -1,156 +1,112 @@
-# Advanced Cron Jobs
+## Advanced Cron Jobs - WP Plugin
 
-=== Cron Manager for WordPress ===
-Contributors: Appsaeed
-Tags: cron, scheduler, task manager, wordpress
-Requires at least: 5.0
-Tested up to: 5.7
-Stable tag: 1.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+### Plugin Name:** Advanced Cron Jobs
 
-Manage and schedule cron jobs in WordPress with ease.
+### Description
 
+Advanced Cron Jobs is a WordPress plugin that simplifies managing and scheduling cron jobs directly from your WordPress dashboard. It offers a user-friendly interface for viewing, editing, deleting, and creating cron events.
 
-Advanced Cron Jobs enables you to view and control what's happening in the WP Cron system.
+### Features
 
-## Description
+* View all cron events with details like arguments, recurrence, callback functions, and next run time.
+* Edit, delete, pause, resume, and immediately run cron events.
+* Add new cron events.
+* Bulk delete cron events.
+* Manage custom cron schedules.
+* Export cron event lists as CSV files.
+* Identify and address potential cron system issues.
+* Supports timezones.
 
-Advanced Cron Jobs enables you to view and control what's happening in the WP-Cron system. From the admin screens you can:
+### Benefits
 
- * View all cron events along with their arguments, recurrence, callback functions, and when they are next due.
- * Edit, delete, pause, resume, and immediately run cron events.
- * Add new cron events.
- * Bulk delete cron events.
- * Add and remove custom cron schedules.
- * Export and download cron event lists as a CSV file.
+* Gain control over your WordPress cron jobs.
+* Improve website performance by optimizing cron job schedules.
+* Easily troubleshoot cron-related issues.
+* Securely manage cron events with user access controls.
 
-Advanced Cron Jobs is aware of timezones, will alert you to events that have no actions or that have missed their schedule, and will show you a helpful warning message if it detects any problems with your cron system.
+### Installation
+There are two ways to install Advanced Cron Jobs:
+
+**Method 1: Manual Installation**
+
+1. Download the plugin source code from the official repository on GitHub.
+2. Upload the downloaded folder (containing the plugin files) to your WordPress site's `/wp-content/plugins/` directory.
+3. Activate the "Advanced Cron Jobs" plugin from the WordPress admin panel (Plugins > Installed Plugins).
+
+**Method 2: WordPress Plugin Directory Installation**
+
+1. Navigate to the "Plugins" menu in your WordPress admin panel.
+2. Search for "Advanced Cron Jobs" in the plugin directory.
+3. Click "Install Now" for the plugin.
+4. Once installed, click "Activate" to start using the plugin.2. Install and activate the plugin.
+
 
 ### Usage
 
-1. Go to the `Tools → Cron Events` menu to manage cron events.
-2. Go to the `Settings → Cron Schedules` menu to manage cron schedules.
+1. Navigate to **Tools > Cron Events** to manage existing cron events.
+2. Navigate to **Settings > Cron Schedules** to manage custom cron schedules.
 
+### Accessibility
 
-### Privacy Statement
+Advanced Cron Jobs is designed to be accessible and adhere to WCAG 2.0 guidelines. If you encounter any accessibility issues, please report them through the plugin's GitHub repository.
 
-Advanced Cron Jobs is private by default and always will be. It does not send data to any third party, nor does it include any third party resources.
+### Frequently Asked Questions (FAQs)
 
-[Advanced Cron Jobs's full privacy statement can be found here](https://github.com/appsaeed/wp-cron-job/wiki).
+**Does this plugin work with PHP 8 or above?**
 
-### Accessibility Statement
+Yes, the plugin is actively tested and works up to PHP 8.2.
 
-Advanced Cron Jobs aims to be fully accessible to all of its users. It implements best practices for web accessibility, outputs semantic and structured markup, adheres to the default styles and accessibility guidelines of WordPress, uses the accessibility APIs provided by WordPress and web browsers where appropriate, and is fully accessible via keyboard and via mobile devices.
+**Is it safe to delete cron events?**
 
-Advanced Cron Jobs should adhere to Web Content Accessibility Guidelines (WCAG) 2.0 at level AA when used with a recent version of WordPress where its admin area itself adheres to these guidelines. If you've experienced or identified an accessibility issue in Advanced Cron Jobs, please open a issue in [the WP Cron plugin support Github](https://github.com/appsaeed/wp-cron-job) and I'll address it swiftly.
+It depends. Use a search engine to find out which plugin the event belongs to before deleting. Events with "None" as the action are usually safe to delete.
 
-## Frequently Asked Questions
+**Why can't I delete some cron events?**
 
-### Does this plugin work with PHP 8?
+WordPress core uses these events. You can pause them instead.
 
-Yes, it's actively tested and working up to PHP 8.2.
+**What happens when I pause an event?**
 
-### Is it safe to delete cron events?
+Pausing disables all actions attached to the event's hook. The event remains scheduled but won't run.
 
-This depends entirely on the event. You can use your favourite search engine to search for the event name in order to find out which plugin it belongs to, and then decide whether or not to delete it.
+**What happens when I resume an event?**
 
-If the event shows "None" as its action then it's usually safe to delete. Please see the other FAQs for more information about events with no action.
+Resuming re-enables all actions attached to the event's hook.
 
-### Why can't I delete some cron events?
+**What does "None" for the Action of a cron event mean?**
 
-The WordPress core software uses cron events for some of its functionality and removing these events is not possible because WordPress would immediately reschedule them if you did delete them. For this reason, Advanced Cron Jobs doesn't let you delete these persistent events from WordPress core in the first place.
+The event is scheduled but has no functionality to trigger, making it useless. This can happen with deactivated plugins that don't clean up their cron events.
 
-If you don't want these events to run, you can use the "Pause this hook" action instead.
+**How do I change the schedule of a cron event?**
 
-### What happens when I pause an event?
+Edit the event through the plugin interface.
 
-Pausing an event will disable all actions attached to the event's hook. The event itself will remain in place and will run according to its schedule, but all actions attached to its hook will be disabled. This renders the event inoperative but keeps it scheduled so as to remain fully compatible with events which would otherwise get automatically rescheduled when they're missing.
+**How can I create a cron event that requests a URL?**
 
-As pausing an event actually pauses its hook, all events that use the same hook will be paused or resumed when pausing and resuming an event. This is much more useful and reliable than pausing individual events separately.
+Create a PHP cron event that uses the WordPress HTTP API to fetch the URL.
 
-### What happens when I resume an event?
+**Can I export a list of cron events?**
 
-Resuming an event re-enables all actions attached to the event's hook. All events that use the same hook will be resumed.
+Yes, you can export a CSV file from the cron event listing screen.
 
-### What does it mean when "None" is shown for the Action of a cron event?
+**What are cron schedules used for?**
 
-This means the cron event is scheduled to run at the specified time but there is no corresponding functionality that will be triggered when the event runs, therefore the event is useless.
+Cron schedules define intervals for executing events. Plugins can add custom schedules for specific functionalities.
 
-This is often caused by plugins that don't clean up their cron events when you deactivate them. You can use your favourite search engine to search for the event name in order to find out which plugin it belongs to, and then decide whether or not to delete it.
+**How do I create a new cron event?**
 
-### How do I change the next run time or the recurrence of a cron event?
+1. Use the plugin interface to add a new event with the desired hook name and schedule.
+2. In your theme's `functions.php` file, use `add_action` to define the function to be executed when the hook is triggered.
 
-You can change the time and recurrence of a cron event by clicking the "Edit" link next to the event.
+### How to Contribute
 
-### How can I create a cron event that requests a URL?
+The plugin's code is available on GitHub. Here's how to contribute:
 
-From the Tools → Cron Events → Add New screen, create a PHP cron event that includes PHP that fetches the URL using the WordPress HTTP API. For example:
+1. Fork the repository on GitHub.
+2. Clone the forked repository to your local machine.
+3. Make your changes and commit them.
+4. Create a pull request on the original GitHub repository.
+### Additional Notes
 
-	wp_remote_get( 'http://example.com' );
-
-### Can I export a list of cron events?
-
-Yes, a CSV file of the event list can be exported and downloaded via the "Export" button on the cron event listing screen. This file can be opened in any spreadsheet application.
-
-### Can I see a historical log of all the cron events that ran on my site?
-
-Not yet, but I hope to add this functionality soon.
-
-### Can I see a historical log of edits, additions, and deletions of cron events and schedules?
-
-Yes. The excellent <a href="https://wordpress.org/plugins/simple-history/">Simple History plugin</a> has built-in support for logging actions performed via Advanced Cron Jobs.
-
-### What's the use of adding new cron schedules?
-
-Cron schedules are used by WordPress and plugins for scheduling events to be executed at regular intervals. Intervals must be provided by the WordPress core or a plugin in order to be used. As an example, many backup plugins provide support for periodic backups. In order to do a weekly backup, a weekly cron schedule must be entered into Advanced Cron Jobs first and then a backup plugin can take advantage of it as an interval.
-
-### How do I create a new cron event?
-
-There are two steps to getting a functioning cron event that executes regularly. The first step is telling WordPress about the hook. This is the part that Advanced Cron Jobs was created to provide. The second step is calling a function when your hook is executed.
-
-*Step One: Adding the hook*
-
-In the Tools → Cron Events admin panel, click on "Add New" and enter the details of the hook. You're best off using a hook name that conforms to normal PHP variable naming conventions. The event schedule is how often your hook will be executed. If you don't see a good interval, then add one in the Settings → Cron Schedules admin panel.
-
-*Step Two: Writing the function*
-
-This part takes place in PHP code (for example, in the `functions.php` file from your theme). To execute your hook, WordPress runs an action. For this reason, we need to tell WordPress which function to execute when this action is run. The following line accomplishes that:
-
-	add_action( 'my_hookname', 'my_function' );
-
-The next step is to write your function. Here's a simple example:
-
-	function my_function() {
-		wp_mail( 'hello@example.com', 'Advanced Cron Jobs', 'Advanced Cron Jobs rocks!' );
-	}
-
-### How do I create a new PHP cron event?
-
-In the Tools → Cron Events admin panel, click on "Add New". In the form that appears, select "PHP Cron Event" and enter the schedule and next run time. The event schedule is how often your event will be executed. If you don't see a good interval, then add one in the Settings → Cron Schedules admin panel. In the "Hook code" area, enter the PHP code that should be run when your cron event is executed. You don't need to provide the PHP opening tag (`<?php`).
-
-### Which users can manage cron events and schedules?
-
-Only users with the `manage_options` capability can manage cron events and schedules. By default, only Administrators have this capability.
-
-### Which users can manage PHP cron events? Is this dangerous?
-
-Only users with the `edit_files` capability can manage PHP cron events. This means if a user cannot edit files via the WordPress admin area (i.e. through the Plugin Editor or Theme Editor) then they also cannot add, edit, or delete a PHP cron event in Advanced Cron Jobs. By default only Administrators have this capability, and with Multisite enabled only Super Admins have this capability.
-
-If file editing has been disabled via the `DISALLOW_FILE_MODS` or `DISALLOW_FILE_EDIT` configuration constants then no user will have the `edit_files` capability, which means adding, editing, or deleting a PHP cron event will not be permitted.
-
-Therefore, the user access level required to execute arbitrary PHP code does not change with Advanced Cron Jobs activated.
-
-### Are any WP-CLI commands available?
-
-The cron commands which were previously included in Advanced Cron Jobs are now part of WP-CLI itself. See `wp help cron` for more info.
-
-### Who took the photo in the plugin header image?
-
-The photo was taken by <a href="https://www.flickr.com/photos/michaelpardo/21453119315">Michael Pardo</a> and is in the public domain.
-
-
-* Show the hooked actions for each cron event.
-* Don't show the `Delete` link for core's built-in cron events, as they get re-populated immediately.
-* Correct the success message after adding or editing PHP cron events.
-* Correct the translations directory name.
+* WP-CLI commands for cron management are now part of WP-CLI itself. Use `wp help cron` for more information.
+* Only users with the `manage_options` capability can manage cron events and schedules.
+* Only users with the `edit_files` capability can manage PHP cron events.
