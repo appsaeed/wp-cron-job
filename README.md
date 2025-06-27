@@ -1,10 +1,10 @@
-## Advanced Cron Jobs - WP Plugin
-
-### Plugin Name: Advanced Cron Jobs
+## Custom wrodpress cron jobs management
 
 ### Description
 
-Advanced Cron Jobs is a WordPress plugin that simplifies managing and scheduling cron jobs directly from your WordPress dashboard. It offers a user-friendly interface for viewing, editing, deleting, and creating cron events.
+The plugin inspaired from `Advanced Cron Jobs` plugin.
+This simplifies managing and scheduling cron jobs directly from wp dashboard. 
+It offers a user-friendly interface for viewing, editing, deleting, and creating cron events.
 
 ## Features
 
@@ -25,20 +25,23 @@ Advanced Cron Jobs is a WordPress plugin that simplifies managing and scheduling
 * Securely manage cron events with user access controls.
 
 ## Installation
-There are two ways to install Advanced Cron Jobs:
 
-**Method 1: Manual Installation**
+There are two ways to install this plugin:
 
-1. Download the plugin source code from the official repository on GitHub.
+**Method 1: WordPress Plugin Directory Installation**
+
+1. Download the plugin source code from the repository.
+2. Navigate to the "Plugins" menu in your WordPress admin panel.
+3. Go to "Add new" in the plugin sub menu.
+4. Upload the downloaded file from this repository (.zip file).
+5. Once uploaded, click "Activate" to start using it.
+6. After all you will be able to use it by follow [Uses](#uses) section 
+
+**Method 2: Manual Installation**
+
+1. Download the plugin source code from the repository.
 2. Upload the downloaded folder (containing the plugin files) to your WordPress site's `/wp-content/plugins/` directory.
-3. Activate the "Advanced Cron Jobs" plugin from the WordPress admin panel (Plugins > Installed Plugins).
-
-**Method 2: WordPress Plugin Directory Installation**
-
-1. Navigate to the "Plugins" menu in your WordPress admin panel.
-2. Search for "Advanced Cron Jobs" in the plugin directory.
-3. Click "Install Now" for the plugin.
-4. Once installed, click "Activate" to start using the plugin.2. Install and activate the plugin.
+3. Activate the  plugin from the WordPress admin panel (Plugins > Installed Plugins).
 
 
 ## Usage
@@ -48,7 +51,8 @@ There are two ways to install Advanced Cron Jobs:
 
 ## Accessibility
 
-Advanced Cron Jobs is designed to be accessible and adhere to WCAG 2.0 guidelines. If you encounter any accessibility issues, please report them through the plugin's GitHub repository.
+This plugin is designed to be accessible and adhere to WCAG 2.0 guidelines. 
+If you encounter any accessibility issues, please report them through the repository issues.
 
 ## Frequently Asked Questions (FAQs)
 
