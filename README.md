@@ -26,22 +26,21 @@ It offers a user-friendly interface for viewing, editing, deleting, and creating
 
 ## Installation
 
-There are two ways to install this plugin:
+You can install this plugin using either of the following methods:
 
-**Method 1: WordPress Plugin Directory Installation**
+### Method 1: Install via WordPress Admin
 
-1. Download the plugin source code from the repository.
-2. Navigate to the "Plugins" menu in your WordPress admin panel.
-3. Go to "Add new" in the plugin sub menu.
-4. Upload the downloaded file from this repository (.zip file).
-5. Once uploaded, click "Activate" to start using it.
-6. After all you will be able to use it by follow [Uses](#uses) section 
+1. Download the plugin `.zip` file from this repository.  
+2. In your WordPress dashboard, go to **Plugins > Add New**.  
+3. Click **Upload Plugin**, then select the downloaded `.zip` file.  
+4. Click **Install Now**, then **Activate** the plugin.  
+5. Once activated, refer to the [Usage](#usage) section to get started.
 
-**Method 2: Manual Installation**
+### Method 2: Manual Installation
 
-1. Download the plugin source code from the repository.
-2. Upload the downloaded folder (containing the plugin files) to your WordPress site's `/wp-content/plugins/` directory.
-3. Activate the  plugin from the WordPress admin panel (Plugins > Installed Plugins).
+1. Download and extract the plugin source code.  
+2. Upload the extracted folder to `/wp-content/plugins/` on your server.  
+3. In your WordPress dashboard, go to **Plugins > Installed Plugins** and activate the plugin.
 
 
 ## Usage
