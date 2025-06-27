@@ -1,9 +1,9 @@
-## Custom wrodpress cron jobs management
+## Custom wordpress cron jobs management
 
-### Description
+The plugin Inspired by `WP Control` plugin.
 
-The plugin inspaired from `Advanced Cron Jobs` plugin.
 This simplifies managing and scheduling cron jobs directly from wp dashboard. 
+
 It offers a user-friendly interface for viewing, editing, deleting, and creating cron events.
 
 ## Features
